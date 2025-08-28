@@ -1,126 +1,156 @@
-/* Estilos generales para toda la página */
+/* Estilos generales */
 body {
-    font-family: 'Lato', sans-serif; /* Usamos la fuente que importamos */
-    background-color: #f4f7f9; /* Un fondo de color gris pastel muy claro */
-    color: #333; /* Color de texto principal oscuro para buena legibilidad */
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 1.25rem; /* 20px */
     line-height: 1.6;
 }
 
-/* Estilo para el encabezado principal */
+/* Encabezado */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    color: #5a67d8; /* Un color pastel azul/púrpura */
+    margin-bottom: 2rem;
+    color: #5a67d8;
 }
 
-/* Contenedor principal de los artículos */
+/* Contenedor principal */
 .container {
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenedor en la página */
-    background-color: #ffffff; /* Fondo blanco para el contenido */
-    padding: 30px;
-    border-radius: 8px; /* Bordes redondeados para un look más suave */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Una sombra sutil */
+    max-width: 50rem; /* 800px */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem; /* 32px */
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05); /* 4px 10px */
 }
 
-/* Estilo para cada artículo individual */
+/* Artículos */
 .articulo {
-    border-bottom: 1px solid #e2e8f0; /* Línea divisoria sutil entre artículos */
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    border-bottom: 0.0625rem solid #e2e8f0; /* 1px */
+    padding-bottom: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem;
 }
 
-/* Quitar el borde del último artículo para un acabado limpio */
 .articulo:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-/* Estilo para el título de cada artículo */
 .articulo-titulo {
-    font-size: 1.5em; /* Tamaño de fuente más grande para el título */
-    color: #4a5568; /* Un color de texto un poco más suave que el principal */
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: #4a5568;
     margin-top: 0;
-    font-weight: 700; /* Texto en negrita */
+    font-weight: 700;
 }
 
-/* Estilo para el contenido de cada artículo */
 .articulo-contenido {
-    font-size: 1em;
-    color: #718096; /* Un color gris más claro para el contenido */
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: #718096;
 }
-/* --- NUEVOS ESTILOS PARA LA NAVEGACIÓN --- */
 
-/* Contenedor principal que alinea el menú y el contenido */
+/* Layout y navegación */
 .main-layout {
-    display: flex; /* Activa el modo Flexbox */
-    align-items: flex-start; /* Alinea los items al inicio */
-    gap: 30px; /* Espacio entre el menú y el contenido */
-    max-width: 1200px; /* Ancho máximo para el diseño completo */
-    margin: 0 auto; /* Centra el layout */
+    display: flex;
+    align-items: flex-start;
+    gap: 1.875rem; /* 30px */
+    max-width: 75rem; /* 1200px */
+    margin: 0 auto;
 }
 
-/* Estilo para el menú de navegación lateral */
 .navigation-menu {
-    flex: 1; /* Ocupa 1 parte del espacio disponible */
+    flex: 1;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Hace que el menú se quede fijo al hacer scroll */
-    top: 20px;
-    /* --- LÍNEAS NUEVAS --- */
-    /* Altura máxima: calcula el 100% de la altura de la ventana menos 140px (para el header y márgenes) */
-    max-height: calc(100vh - 140px);
-    /* Si el contenido del menú excede la altura máxima, muestra una barra de scroll */
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 1.25rem; /* 20px */
+    max-height: calc(100vh - 8.75rem); /* 140px */
     overflow-y: auto;
 }
 
 .navigation-menu h2 {
     margin-top: 0;
     color: #5a67d8;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 10px;
+    border-bottom: 0.125rem solid #e2e8f0; /* 2px */
+    padding-bottom: 0.625rem; /* 10px */
 }
 
-/* Estilo para la lista dentro del menú */
 .navigation-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-/* Estilo para cada elemento del menú */
 .navigation-menu ul li a {
     display: block;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
     color: #4a5568;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px */
     transition: background-color 0.2s ease-in-out;
     font-weight: bold;
 }
 
-/* Efecto al pasar el mouse sobre un elemento */
 .navigation-menu ul li a:hover {
     background-color: #edf2f7;
 }
 
-/* Estilo para el elemento del menú que está ACTIVO */
 .navigation-menu ul li a.active {
     background-color: #5a67d8;
     color: #ffffff;
 }
 
-/* El contenedor de contenido ahora ocupa más espacio */
 #contenido-container {
-    flex: 3; /* Ocupa 3 partes del espacio, siendo más grande que el menú */
+    flex: 3;
 }
 
-/* Clase para ocultar elementos. ¡Esta es muy importante! */
+/* Ocultar elementos (para JS o menú móvil) */
 .hidden {
     display: none;
+}
+
+/* --- 📱 Responsivo --- */
+@media (max-width: 62rem) { /* 992px */
+    .main-layout {
+        gap: 1.25rem; /* 20px */
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 48rem) { /* 768px */
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .navigation-menu {
+        position: relative;
+        top: auto;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 30rem) { /* 480px */
+    body {
+        padding: 0.625rem; /* 10px */
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .articulo-titulo {
+        font-size: 1.2rem;
+    }
+
+    .navigation-menu ul li a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
 }
