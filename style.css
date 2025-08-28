@@ -1,0 +1,126 @@
+/* Estilos generales para toda la página */
+body {
+    font-family: 'Lato', sans-serif; /* Usamos la fuente que importamos */
+    background-color: #f4f7f9; /* Un fondo de color gris pastel muy claro */
+    color: #333; /* Color de texto principal oscuro para buena legibilidad */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Estilo para el encabezado principal */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5a67d8; /* Un color pastel azul/púrpura */
+}
+
+/* Contenedor principal de los artículos */
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    padding: 30px;
+    border-radius: 8px; /* Bordes redondeados para un look más suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Una sombra sutil */
+}
+
+/* Estilo para cada artículo individual */
+.articulo {
+    border-bottom: 1px solid #e2e8f0; /* Línea divisoria sutil entre artículos */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* Quitar el borde del último artículo para un acabado limpio */
+.articulo:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Estilo para el título de cada artículo */
+.articulo-titulo {
+    font-size: 1.5em; /* Tamaño de fuente más grande para el título */
+    color: #4a5568; /* Un color de texto un poco más suave que el principal */
+    margin-top: 0;
+    font-weight: 700; /* Texto en negrita */
+}
+
+/* Estilo para el contenido de cada artículo */
+.articulo-contenido {
+    font-size: 1em;
+    color: #718096; /* Un color gris más claro para el contenido */
+}
+/* --- NUEVOS ESTILOS PARA LA NAVEGACIÓN --- */
+
+/* Contenedor principal que alinea el menú y el contenido */
+.main-layout {
+    display: flex; /* Activa el modo Flexbox */
+    align-items: flex-start; /* Alinea los items al inicio */
+    gap: 30px; /* Espacio entre el menú y el contenido */
+    max-width: 1200px; /* Ancho máximo para el diseño completo */
+    margin: 0 auto; /* Centra el layout */
+}
+
+/* Estilo para el menú de navegación lateral */
+.navigation-menu {
+    flex: 1; /* Ocupa 1 parte del espacio disponible */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Hace que el menú se quede fijo al hacer scroll */
+    top: 20px;
+    /* --- LÍNEAS NUEVAS --- */
+    /* Altura máxima: calcula el 100% de la altura de la ventana menos 140px (para el header y márgenes) */
+    max-height: calc(100vh - 140px);
+    /* Si el contenido del menú excede la altura máxima, muestra una barra de scroll */
+    overflow-y: auto;
+}
+
+.navigation-menu h2 {
+    margin-top: 0;
+    color: #5a67d8;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* Estilo para la lista dentro del menú */
+.navigation-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para cada elemento del menú */
+.navigation-menu ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el mouse sobre un elemento */
+.navigation-menu ul li a:hover {
+    background-color: #edf2f7;
+}
+
+/* Estilo para el elemento del menú que está ACTIVO */
+.navigation-menu ul li a.active {
+    background-color: #5a67d8;
+    color: #ffffff;
+}
+
+/* El contenedor de contenido ahora ocupa más espacio */
+#contenido-container {
+    flex: 3; /* Ocupa 3 partes del espacio, siendo más grande que el menú */
+}
+
+/* Clase para ocultar elementos. ¡Esta es muy importante! */
+.hidden {
+    display: none;
+}
