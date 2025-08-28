@@ -6,6 +6,12 @@ body {
     margin: 0;
     padding: 1.25rem; /* 20px */
     line-height: 1.6;
+    box-sizing: border-box; /* Incluye padding en cálculos de ancho */
+}
+
+/* Asegurar que todos los elementos usen box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 /* Encabezado */
@@ -112,7 +118,9 @@ header {
     display: none;
 }
 
-/* --- 📱 Responsivo --- */
+/* --- 📱 MEDIA QUERIES RESPONSIVAS --- */
+
+/* Tablets grandes y pantallas medianas */
 @media (max-width: 62rem) { /* 992px */
     .main-layout {
         gap: 1.25rem; /* 20px */
@@ -121,11 +129,23 @@ header {
     .container {
         padding: 1.5rem;
     }
+    
+    .navigation-menu {
+        flex: 0 0 250px; /* Ancho fijo para el menú en tablets */
+    }
 }
 
+/* Tablets */
 @media (max-width: 48rem) { /* 768px */
+    body {
+        padding: 0.5rem; /* Reducido para dar más espacio al contenido */
+    }
+    
     .main-layout {
-        flex-direction: column;
+        flex-direction: column; /* Menú arriba, contenido abajo */
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .navigation-menu {
@@ -133,24 +153,135 @@ header {
         top: auto;
         max-height: none;
         overflow: visible;
+        width: 100%;   /* ✅ menú ocupa todo el ancho */
+        flex: none;    /* ✅ elimina flex para que no compita por espacio */
+        margin-bottom: 0.75rem;
+        max-height: 300px; /* Limita altura del menú en móviles */
+        overflow-y: auto;
+        padding: 1rem; /* Reducido */
+    }
+
+    #contenido-container {
+        width: 100%;   /* ✅ contenido ocupa todo el ancho */
+        flex: none;    /* ✅ elimina flex */
+    }
+    
+    .container {
+        padding: 1rem; /* Reducido para dar más espacio al texto */
+        margin: 0; /* Elimina márgen automático */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box; /* Incluye padding en el ancho total */
     }
 }
 
+/* Móviles */
 @media (max-width: 30rem) { /* 480px */
     body {
-        padding: 0.625rem; /* 10px */
+        padding: 0.25rem; /* Mínimo padding para maximizar espacio */
     }
 
     .container {
-        padding: 1rem;
+        padding: 0.75rem; /* Reducido para dar más espacio */
+        border-radius: 0.25rem;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .articulo-titulo {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        word-wrap: break-word; /* Permite que las palabras largas se rompan */
+        overflow-wrap: break-word;
+    }
+
+    .articulo-contenido {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: justify; /* Justifica el texto para mejor aprovechamiento */
+    }
+
+    .navigation-menu {
+        padding: 0.75rem;
+        max-height: 250px; /* Menú más compacto en móviles pequeños */
+        margin-bottom: 0.5rem;
     }
 
     .navigation-menu ul li a {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+        word-wrap: break-word;
+    }
+    
+    .navigation-menu h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Espaciado más compacto en móviles */
+    .articulo {
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .main-layout {
+        gap: 0.5rem;
+        width: 100%;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 20rem) { /* 320px */
+    body {
+        padding: 0.125rem; /* Padding mínimo */
+    }
+    
+    .container {
+        padding: 0.5rem; /* Muy reducido para maximizar espacio */
+        border-radius: 0.125rem;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .navigation-menu {
+        padding: 0.5rem;
+        max-height: 200px;
+        margin-bottom: 0.25rem;
+    }
+    
+    .navigation-menu ul li a {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    .navigation-menu h2 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .articulo-titulo {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    
+    .articulo-contenido {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .articulo {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .main-layout {
+        gap: 0.25rem;
     }
 }
